@@ -112,14 +112,14 @@ public:
 					
 					//Determine level that is gray
 					uint8 k_level = player->getLevel();
-					uint8 k_grey = acore::XP::GetGrayLevel(k_level);
+					uint8 k_grey = Acore::XP::GetGrayLevel(k_level);
 					uint8 v_level = killed->getLevel();
 					
 					
 					// If guard or elite is grey to the player then no honor rewarded
 					if (v_level > k_grey)
 					{
-						honor_f = ceil(acore::Honor::hk_honor_at_level_f(k_level) * (v_level - k_grey) / (k_level - k_grey));
+						honor_f = ceil(Acore::Honor::hk_honor_at_level_f(k_level) * (v_level - k_grey) / (k_level - k_grey));
 
 						// count the number of playerkills in one day
 						player->ApplyModUInt32Value(PLAYER_FIELD_KILLS, 1, true);
